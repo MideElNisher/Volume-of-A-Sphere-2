@@ -1,0 +1,53 @@
+//TSV(d)IEDP
+//Sphere Assignment Code, for two balls
+
+#include <iostream>
+#include <cmath>
+#include <string>
+#include <iomanip>
+
+using namespace std;
+
+int main() {
+	//Variables
+	double PI = 3.141592654;
+	double rad_1, rad_2, Vol_Sphere_1,Vol_Sphere_2, SA_Sphere_1,SA_Sphere_2;
+	string First_Sphere;
+	string Second_Sphere;
+	string answer;
+	do {
+		//Ask user details
+		cout << "\n Please enter the name of the first sphere ";
+		getline (cin, First_Sphere);
+		cout << "\n Please enter the name of the second sphere ";
+		getline (cin, Second_Sphere);
+		cout << "\n Please enter the radius of the first sphere ";
+		cin >> rad_1 ;
+		cin.ignore();
+		cout << "\n Please enter the radius of the second sphere ";
+		cin >> rad_2 ;
+		cin.ignore();
+
+		//Setting up equations
+		SA_Sphere_1 = 4 * PI * pow(rad_1, 2);
+		SA_Sphere_2 = 4 * PI * pow(rad_2, 2);
+		Vol_Sphere_1 = 4.0/3.0 * PI * pow(rad_1, 3);
+		Vol_Sphere_2 = 4.0/3.0 * PI * pow(rad_2, 3);
+
+		//Decimal Places
+		cout.setf (ios :: fixed | ios :: showpoint);
+		cout.precision(3);
+
+		//printing out the result to the output
+		cout << "\n Spheres Details" 
+			<< "\n The Volume of the " << First_Sphere << " is " << Vol_Sphere_1 << " cubic units"
+			 << "\n The Volume of the " << Second_Sphere << " is " << Vol_Sphere_2 << " cubic units"
+			 <<"\n The Surface Area of the " << First_Sphere << " is " << SA_Sphere_1 << "square units"
+			 << "\n The Surface Area of the "<< Second_Sphere << " is " << SA_Sphere_2 << " square units" <<endl;
+       cout <<"\n Do you want to run the Program again? yes/no";
+	getline(cin, answer);
+	} while(answer == "yes");
+
+	system ("pause");
+	return 0;
+}
